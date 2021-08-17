@@ -9,8 +9,13 @@ urlpatterns = [
     #http://127.0.0.1:8000/restaurantDetail/ 요청 처리
     path('restaurantCreate/', views.restaurantCreate, name='resCreatePage'),
     #http://127.0.0.1:8000/restaurantCreate/ 요청 처리
+    path('restaurantCreate/create', views.Create_restaurant, name='resCreate'),
+    #http://127.0.0.1:8000/restaurantCreate/ 요청 처리
     path('categoryCreate/',views.categoryCreate, name='cateCreatePage'),
     #http://127.0.0.1:8000/categoryCreate/ 요청 처리
     path('categoryCreate/create',views.create_category,name='cateCreate'),
     #http://127.0.0.1:8000/categoryCreate/create/ 요청 처리
+    path('categoryCreate/delete',views.Delete_category,name='cateDelete'),
+    #http://127.0.0.1:8000/categoryCreate/delete/ 요청 처리
+
 ]

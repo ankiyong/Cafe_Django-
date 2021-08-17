@@ -215,19 +215,21 @@
                                     <a href="categoryCreate/" class="categoryAddBtn btn btn-info" role="button">+</a>
                             </div>
                         </div>
-                        
                         <ul class="restaurantListDiv nav nav-pills nav-stacked">
                             {% for category in categories %}
                             <li class="category deactive">{{category.category_name}}</li>
                             <ul class="restaurantList">
 
+                                {%for restaurant in restaurants%}
+                                {%if restaurant.category == category%}
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <input name="checks" id="check{{restaurant.id}}" type="checkbox" value="{{restaurant.id}}">
                                     </span>
                                     <a href="restaurantDetail/{{restaurant.id}}"><input name="res{{restaurant.id}}" id="res{{restaurant.id}}" type="text" class="form-control" disabled style="cursor: pointer;" value="{{restaurant.restaurant_name}}"></a>
                                 </div>
-
+                                {%endif%}
+                                {%endfor%}
                             </ul>
                             {% endfor %}
                         </ul>
